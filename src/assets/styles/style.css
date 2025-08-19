@@ -1,0 +1,341 @@
+@font-face {
+  font-family: Starjedi;
+  src: url("../fonts/Starjedi.ttf");
+}
+
+@font-face {
+  font-family: Starjhol;
+  src: url("../fonts/Starjhol.ttf");
+}
+
+@font-face {
+  font-family: Starjout;
+  src: url("../fonts/Starjout.ttf");
+}
+
+@font-face {
+  font-family: Stjedise;
+  src: url("../fonts/Stjedise.ttf");
+}
+
+@font-face {
+  font-family: Stjldbl1;
+  src: url("../fonts/Stjldbl1.ttf");
+}
+
+@font-face {
+  font-family: Stjldbl2;
+  src: url("../fonts/Stjldbl2.ttf");
+}
+
+@font-face {
+  font-family: Strjmono;
+  src: url("../fonts/Strjmono.ttf");
+}
+
+@font-face {
+  font-family: "News Gothic Bold";
+  src: url("../fonts/news-gothic-bold.otf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+:root {
+  --light-color: #fff;
+  --dark-color: #000;
+  --text-star-wars: #ffeb26;
+
+  background-color: var(--dark-color);
+}
+
+body {
+  padding: 2rem;
+}
+
+h1 {
+  text-shadow: -1px -1px var(--text-star-wars), 0px -1px var(--text-star-wars), 1px -1px var(--text-star-wars),
+    -1px 0px var(--text-star-wars), 1px 0px var(--text-star-wars), -1px 1px var(--text-star-wars),
+    0px 1px var(--text-star-wars), 1px 1px var(--text-star-wars), -2px -2px var(--text-star-wars),
+    -1px -2px var(--text-star-wars), 0px -2px var(--text-star-wars), 1px -2px var(--text-star-wars),
+    2px -2px var(--text-star-wars), 2px -1px var(--text-star-wars), 2px 0px var(--text-star-wars),
+    2px 1px var(--text-star-wars), 2px 2px var(--text-star-wars), 1px 2px var(--text-star-wars),
+    0px 2px var(--text-star-wars), -1px 2px var(--text-star-wars), -2px 2px var(--text-star-wars),
+    -2px 1px var(--text-star-wars), -2px 0px var(--text-star-wars), -2px -1px var(--text-star-wars);
+  font-family: Starjedi, sans-serif;
+  font-size: 6rem;
+}
+
+header {
+  padding: 0 1.2rem;
+  z-index: 2;
+  position: relative;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.loader {
+  color: transparent;
+  position: relative;
+  border-radius: 3rem;
+  background: #3a3a3a;
+  background-image: linear-gradient(
+    to right,
+    #3a3a3a 0%,
+    #3f3f3f 10%,
+    #4a4a4a 20%,
+    #3f3f3f 30%,
+    #3a3a3a 50%,
+    #3a3a3a 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 800px 200px;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: shimmer;
+  animation-timing-function: ease-in-out;
+}
+
+.loaded:hover {
+  color: var(--light-color);
+  cursor: pointer;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+header nav li {
+  font-family: Starjedi, sans-serif;
+  font-size: 3rem;
+}
+
+li {
+  color: var(--text-star-wars);
+  transition: font-size 0.5s ease, background 0.3s ease, border-radius 0.3s ease;
+}
+
+header div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+input[type="text"] {
+  display: none;
+  width: 40rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid var(--light-color);
+  color: var(--light-color);
+  outline: none;
+  font-size: 2rem;
+}
+
+input[type="text"]:focus input[type="text"]::placeholder {
+  display: none;
+}
+
+body {
+  margin: 0;
+  background-color: #000;
+  overflow: hidden !important;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80vh;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 61%, rgba(0, 0, 0, 0.54) 79%, rgba(0, 0, 0, 0) 100%);
+  z-index: 1;
+}
+
+.stars {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background-color: #fff;
+  z-index: 2;
+}
+
+.intro {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: rgb(75, 213, 238);
+  font-family: "News Gothic Bold", sans-serif;
+  font-weight: 500;
+  font-size: 3.25rem;
+  width: 80%;
+  opacity: 0;
+  animation: intro 6s ease-out 0.5s;
+}
+
+@keyframes intro {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.logo {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 100%;
+  opacity: 0;
+  font-family: Starjhol;
+  font-size: 4000%;
+  color: var(--text-star-wars);
+  text-align: center;
+  animation: logo 10s ease-out 9s;
+}
+
+@keyframes logo {
+  0% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+  }
+}
+
+p {
+  color: var(--text-star-wars);
+}
+
+.scroller {
+  font-family: "News Gothic Bold", sans-serif;
+  font-weight: bold;
+  font-size: 350%;
+  text-align: justify;
+  overflow: hidden;
+  height: 50em;
+  width: 20em;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -10em;
+  z-index: 0;
+  transform: perspective(350px) rotateX(25deg);
+  transform-origin: 50% 100%;
+}
+
+.scroller::after {
+  position: absolute;
+  content: "";
+  bottom: 60%;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.content {
+  display: none;
+  position: absolute;
+  top: 100%;
+}
+
+.scroller-show {
+  overflow: auto;
+  height: 80vh;
+  position: relative;
+  z-index: 2;
+  transform: none;
+  /* border: 1px solid red; */
+}
+
+.scroller-show::-webkit-scrollbar {
+  display: none;
+}
+
+.content-show {
+  display: inline;
+  position: relative;
+  top: 25%;
+  height: fit-content;
+}
+
+@keyframes scoller {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: -200%;
+  }
+}
+
+@keyframes showContent {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#title,
+#subtitle {
+  text-align: center;
+}
+
+#subtitle {
+  text-transform: uppercase;
+  font-size: 3.5rem;
+}

@@ -1,13 +1,37 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Star Wars</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <header>
+      <nav>
+        <h1>Star Wars</h1>
+        <ul>
+          <li class="loader" id="films">Films</li>
+          <li class="loader" id="planets">Planets</li>
+          <li class="loader" id="people">People</li>
+        </ul>
+      </nav>
+      <div>
+        <input type="text" name="search-input" id="search-input" placeholder="Search..." autocomplete="off" />
+      </div>
+    </header>
+    <main>
+      <section class="intro">
+        A long time ago, in a galaxy far,<br />
+        far away....
+      </section>
+      <section>
+        <h2 class="logo"></h2>
+      </section>
+      <div class="scroller">
+        <div class="content"></div>
+      </div>
+    </main>
+    <script type="module" src="/src/assets/scripts/main.ts"></script>
   </body>
 </html>
